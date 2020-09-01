@@ -1,0 +1,11 @@
+html {
+  font-size: 10px;
+}
+
+.App {
+  display: flex;
+  background-color: #7c7286;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
