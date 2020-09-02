@@ -1,0 +1,12 @@
+.mainContainer {
+  border: 0.1rem solid #ffffff;
+  padding: 5rem;
+}
+
+.resistorContainer {
+}
+
+.selectionContainer {
+  display: flex;
+  justify-content: center;
+}

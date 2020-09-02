@@ -1,23 +1,29 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
 const Colour = (props) => {
 
-  let style = {
-    height: '2rem',
-    minWidth: '2rem',
-    margin: '0.5rem',
-    border: '0',
-    borderRadius: '10px',
-    boxShadow: "0 5px 10px -5px rgba(0,0,0,0.5)",
-    backgroundColor: props.Kolour,
-    padding: "5px",
-  }
+  const Button = ({ className, children }) => (
+    <button className={className} onClick={props.onClick}>{children}</button>
+  );
 
-  return (
-    <div>
-      <button style={style} onClick={props.onClick}>{props.text}</button>
-    </div>
-  )
+  const StyledButton = styled(Button)`
+    height: 2rem;
+    min-width: ${props.minWidth}rem;
+    margin: 0.5rem;
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem -0.5rem rgba(0,0,0,0.5);
+    color: ${props.textColour};
+    background-color: ${props.colour};
+
+    &:hover{
+      transform: translate(-0.1rem, -0.1rem);
+    }
+  `
+
+  return ( <StyledButton>{props.text}</StyledButton> )
 }
 
 export default Colour;
