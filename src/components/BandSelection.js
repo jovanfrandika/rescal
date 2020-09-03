@@ -1,4 +1,4 @@
-import React, {  useContext, useState } from 'react';
+import React, {  useContext } from 'react';
 
 import BandContext from '../BandContext';
 import BandTypeContext from '../BandTypeContext';
@@ -37,7 +37,7 @@ const BandSelection = (props) => {
   let colourSelections = colourList.map((colour, index) => {
     let text, textColour, minWidth;
     
-    (index % 3) === 0  && index !== 0 ? isBlack = !isBlack : isBlack = isBlack;     
+    if ((index % 3) === 0  && index !== 0)  isBlack = !isBlack;      
     isBlack ? textColour = '#000000' : textColour = '#ffffff';
 
     if (props.whichBand === 'fourth'){
