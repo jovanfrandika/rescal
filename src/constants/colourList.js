@@ -12,17 +12,3 @@ export const colourList = [
   "#b29600",  //gold
   "#c0c0c0",  //silver
 ]
-
-export const textColourList = [
-  "#ffffff",  //black
-  "#cccccc",   //brown
-  "#444444",   //red
-  "#222222",   //orange
-  "#444444",   //yellow
-  "#000000",   //green
-  "#cccccc",   //blue
-  "#cccccc",   //yellow
-  "#ffffff",
-  "#000000",  //white
-  "#b29600",  //gold
-]

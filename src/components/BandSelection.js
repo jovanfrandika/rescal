@@ -3,7 +3,7 @@ import React, {  useContext } from 'react';
 import BandContext from '../BandContext';
 import BandTypeContext from '../BandTypeContext';
 
-import { colourList, textColourList } from '../constants/colourList';
+import { colourList } from '../constants/colourList';
 import { multiplier, tolerance } from '../constants/textList';
 
 import Colour from './Colour';
