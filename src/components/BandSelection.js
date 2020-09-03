@@ -3,7 +3,7 @@ import React, {  useContext } from 'react';
 import BandContext from '../BandContext';
 import BandTypeContext from '../BandTypeContext';
 
-import { colourList } from '../constants/colourList';
+import { colourList, textColourList } from '../constants/colourList';
 import { multiplier, tolerance } from '../constants/textList';
 
 import Colour from './Colour';
@@ -31,14 +31,12 @@ const BandSelection = (props) => {
     margin: '0 0.2rem'
   };
 
-  let label, isBlack;
-  isBlack = false;
+  let label;
 
   let colourSelections = colourList.map((colour, index) => {
     let text, textColour, minWidth;
     
-    if ((index % 3) === 0  && index !== 0)  isBlack = !isBlack;      
-    isBlack ? textColour = '#000000' : textColour = '#ffffff';
+    textColour = '#38565c';
 
     if (props.whichBand === 'fourth'){
       label = 'M';
@@ -55,7 +53,7 @@ const BandSelection = (props) => {
     else {
       label = props.whichBand;
       text = index;
-      minWidth = 2;
+      minWidth = 3;
     } 
 
     if (props.whichBand !== 'fourth' && props.whichBand !== 'fifth' && index > 9) 
