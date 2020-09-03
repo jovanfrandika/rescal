@@ -4,7 +4,6 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 
 import Main from "./containers/pages/Main/Main";
-import Save from "./containers/pages/Save";
 
 import BandContext from "./BandContext";
 import BandTypeContext from './BandTypeContext';
@@ -40,7 +39,6 @@ function App() {
         <BandContext.Provider value={bandValues}>
           <Switch>
             <Route exact path="/" component={Main}/> 
-            <Route path="/save" component={Save}/>
           </Switch>
         </BandContext.Provider>
       </BandTypeContext.Provider>
