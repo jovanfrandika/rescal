@@ -23,9 +23,11 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('resistorCookies')) {
       let objectBands = JSON.parse(localStorage.getItem('resistorCookies'));
-      console.log(localStorage.getItem('resistorCookies'));
-      console.log(objectBands);
       setBands(objectBands);
+    }
+    if(localStorage.getItem('resistorTypeCookies')) {
+      let objectBandType = JSON.parse(localStorage.getItem('resistorTypeCookies'));
+      setIsFiveBands(objectBandType); 
     }
   }, [])
 

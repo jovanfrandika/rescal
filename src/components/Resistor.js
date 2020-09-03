@@ -31,7 +31,7 @@ const Resistor = (props) => {
     if (index === 0 || index === 4)
     bandHeight =  (Number(props.height))+ 'rem';
     else
-    bandHeight =  (Number(props.height)/1.3)+ 'rem';
+    bandHeight =  (Number(props.height)/1.27)+ 'rem';
     
     if (isFiveBands) {
       if (index === 2) left = 1.6;
@@ -60,7 +60,7 @@ const Resistor = (props) => {
   })
   
   const Container = styled.div`
-  margin: 2rem 0;
+  margin: 2rem 0 1rem 0;
   `;
   
   const BaseResistor = styled.div`
@@ -74,8 +74,8 @@ const Resistor = (props) => {
   background-size: cover;
   `;
 
-  let a, b, c, d;
-  a = bandsProperty.map((band, index) => {
+  let bandValues, baseOhmValue, multipliedOhmValue, len, result;
+  bandValues = bandsProperty.map((band, index) => {
     let selector = bands[band];
     if (band === 'fourth') {
       if (selector === 10 || selector === 11 )
@@ -89,22 +89,22 @@ const Resistor = (props) => {
   }) 
 
   if (isFiveBands) {
-    b = Number(a[0] + a[1] + a[2]);
+    baseOhmValue = Number(bandValues[0] + bandValues[1] + bandValues[2]);
   } else {
-    b = Number(a[0] + a[1]);
+    baseOhmValue = Number(bandValues[0] + bandValues[1]);
   }
-  c = b * a[3];
-  d = String(c);
+  multipliedOhmValue = baseOhmValue * bandValues[3];
+  len = String(multipliedOhmValue).length;
   
-  if (a[3] > 1){
-    if (d.length > 6){
-      c = c / 1000000 + 'm';
-    } else if (d.length > 3){
-      c = c / 1000 + 'k';
+  if (bandValues[3] > 1){
+    if (len > 6){
+      multipliedOhmValue = multipliedOhmValue / 1000000 + 'm';
+    } else if (len > 3){
+      multipliedOhmValue = multipliedOhmValue / 1000 + 'k';
     } 
   }
   
-  let result = c + 'Ω' + a[4];
+  result = multipliedOhmValue + 'Ω' + bandValues[4];
 
   return (
     <Container>
@@ -112,8 +112,10 @@ const Resistor = (props) => {
         {manifestedBands}
       </BaseResistor>
       <Label
-        padding='1.6rem 1rem'
-        margin='3rem 0'
+        padding='0.6rem 0'
+        margin='2rem 0 0 0'
+        bg="#18b193"
+        radius="5"
         fontSize='1.6'
         text={ result }
       />

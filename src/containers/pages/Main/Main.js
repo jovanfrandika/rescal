@@ -15,11 +15,12 @@ const Main = () => {
   const { bands } = useContext(BandContext);
   const bandsProperty = Object.keys(bands);
 
-  let selections = bandsProperty.map(band => <BandSelection whichBand={band}/>);
+  let selections = bandsProperty.map(band => <BandSelection whichBand={band} />);
 
   return (
       <Layout>
         <div className={styles.mainContainer}>
+          <h1 className={styles.title}>Resistor</h1>
           <div className={styles.resistorContainer}> 
             <Resistor height='8' width='24'/>
           </div>

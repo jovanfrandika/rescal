@@ -14,7 +14,7 @@ const Colour = (props) => {
     margin: 0.5rem;
     border: 0;
     border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem -0.5rem rgba(0,0,0,0.5);
+    box-shadow: 0 0.7rem 1.2rem -0.5rem rgba(0,0,0,0.5);
     color: ${props.textColour};
     background-color: ${props.colour};
 

@@ -1,9 +1,15 @@
 .mainContainer {
-  border: 0.1rem solid #ffffff;
+  background: #38565c;
   padding: 5rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+.title {
+  color: #ffffff;
 }
 
 .resistorContainer {
+  padding: 1rem;
 }
 
 .selectionContainer {

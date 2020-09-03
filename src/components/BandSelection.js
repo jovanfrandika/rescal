@@ -1,6 +1,8 @@
-import React, {  useContext } from 'react';
+import React, {  useContext, useState } from 'react';
 
 import BandContext from '../BandContext';
+import BandTypeContext from '../BandTypeContext';
+
 import { colourList } from '../constants/colourList';
 import { multiplier, tolerance } from '../constants/textList';
 
@@ -10,7 +12,8 @@ import Label from './Label';
 
 const BandSelection = (props) => {
   const {bands, setBands} = useContext(BandContext);
-  
+  const {isFiveBands} = useContext(BandTypeContext);
+
   const handleClick = (index) => {
     
     let newBands = {...bands, [props.whichBand]: index}
@@ -22,17 +25,20 @@ const BandSelection = (props) => {
   }
 
   let flexStyle = {
-    display: 'flex',
+    display: !isFiveBands && props.whichBand === 'third' ? 'none' :'flex',
     flexDirection: 'column',
     aligntItems: 'center',
     margin: '0 0.2rem'
   };
 
-  let label;
+  let label, isBlack;
+  isBlack = false;
+
   let colourSelections = colourList.map((colour, index) => {
     let text, textColour, minWidth;
-   
-    ((index%2) !== 1 && index !== 4) ? textColour = '#ffffff' : textColour = '#000000';
+    
+    (index % 3) === 0  && index !== 0 ? isBlack = !isBlack : isBlack = isBlack;     
+    isBlack ? textColour = '#000000' : textColour = '#ffffff';
 
     if (props.whichBand === 'fourth'){
       label = 'M';

@@ -14,7 +14,7 @@ const Label = (props) => {
     width: ${props.width}rem;
     padding: ${props.padding};
     margin: ${props.margin};
-    border: 0.1rem solid #ffffff;
+    background: ${props.bg};
     border-radius: ${props.radius}rem;
     font-size: ${props.fontSize}rem;
   `;
