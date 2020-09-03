@@ -2,7 +2,7 @@ import React from 'react';
 
 const Layout = (props) => {
   let layoutStyle={
-    margin: '15rem 0',
+    margin: '5rem 0',
   }
   return (
     <React.Fragment>

@@ -1,25 +1,16 @@
-import React from 'react';
-
 import styled from 'styled-components';
 
-const Label = (props) => {
-
-  const Text = ({className, children}) => ( 
-    <p className={className}>{children}</p>
-  );
-
-  const StyledText = styled(Text)`
-    color: #ffffff;
-    height: ${props.height}rem;
-    width: ${props.width}rem;
-    padding: ${props.padding};
-    margin: ${props.margin};
-    background: ${props.bg};
-    border-radius: ${props.radius}rem;
-    font-size: ${props.fontSize}rem;
-  `;
-
-  return (<StyledText>{props.text}</StyledText>);
-}
+const Label = styled.p.attrs(props => ({
+  children: props.text,
+}))`
+  color: #ffffff;
+  height: ${props => props.height}rem;
+  width: ${props => props.width}rem;
+  padding: ${props => props.padding};
+  margin: ${props => props.margin};
+  background: ${props => props.bg};
+  border-radius: ${props => props.radius}rem;
+  font-size: ${props => props.fontSize}rem;
+`;
 
 export default Label;

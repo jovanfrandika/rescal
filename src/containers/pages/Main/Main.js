@@ -15,7 +15,7 @@ const Main = () => {
   const { bands } = useContext(BandContext);
   const bandsProperty = Object.keys(bands);
 
-  let selections = bandsProperty.map(band => <BandSelection whichBand={band} />);
+  let selections = bandsProperty.map((band, index) => <BandSelection key={index} whichBand={band} />);
 
   return (
       <Layout>

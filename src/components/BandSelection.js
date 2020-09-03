@@ -62,9 +62,8 @@ const BandSelection = (props) => {
       return null;
 
     return (
-      <div>
+      <div key={index}>
         <Colour 
-          key={index} 
           colour={colour} 
           minWidth={minWidth}
           onClick={() => handleClick(index)} 

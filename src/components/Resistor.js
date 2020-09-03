@@ -12,6 +12,21 @@ import fourBandResistor from '../assets/images/fourBandResistor.png';
 import fiveBandResistor from '../assets/images/fiveBandResistor.png';
 import { tolerance } from '../constants/textList';
 
+const Container = styled.div`
+margin: 2rem 0 1rem 0;
+`;
+
+const BaseResistor = styled.div`
+display: flex;
+flex-direction: row;
+justify-item: center;
+align-items: center;
+height: ${props => props.height};
+width: ${props => props.width};
+background-image: url(${props => props.image});
+background-size: cover;
+`;
+
 const Resistor = (props) => {
   
   const { bands } = useContext(BandContext);
@@ -47,32 +62,20 @@ const Resistor = (props) => {
     
     if (index === 0 || index === 1) left = 2.7;
     
-    let children =  <Band 
-    display={display}
-    colour={colourList[colour]}
-    height={bandHeight}
-    width={bandWidth}
-    mLeft={left}
-    />
-    
-    return ( children )
+    return ( 
+      <div key={index}>
+        <Band 
+          display={display}
+          colour={colourList[colour]}
+          height={bandHeight}
+          width={bandWidth}
+          mLeft={left}
+        />
+      </div>
+    )
     
   })
   
-  const Container = styled.div`
-  margin: 2rem 0 1rem 0;
-  `;
-  
-  const BaseResistor = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-item: center;
-  align-items: center;
-  height: ${height};
-  width: ${width};
-  background-image: url(${baseResistorImage});
-  background-size: cover;
-  `;
 
   let bandValues, baseOhmValue, multipliedOhmValue, len, result;
   bandValues = bandsProperty.map((band, index) => {
@@ -108,7 +111,11 @@ const Resistor = (props) => {
 
   return (
     <Container>
-      <BaseResistor>
+      <BaseResistor
+        height={height}
+        width={width}
+        image={baseResistorImage}
+      >
         {manifestedBands}
       </BaseResistor>
       <Label
