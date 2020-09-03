@@ -34,21 +34,22 @@ const BandSelection = (props) => {
   let label;
 
   let colourSelections = colourList.map((colour, index) => {
-    let text, textColour, minWidth;
+    let text, textColour, minWidth, empty;
     
+    empty = false;
     textColour = '#38565c';
 
     if (props.whichBand === 'fourth'){
       label = 'M';
       text = multiplier[index];
       minWidth = 5;
-      if (text === '') return null;
+      if (text === '') empty = true;
     }
     else if (props.whichBand === 'fifth'){
       label = 'T';
       text = tolerance[index];
       minWidth = 6;
-      if (text === '') return null;
+      if (text === '') empty = true;
     } 
     else {
       label = props.whichBand;
@@ -57,8 +58,10 @@ const BandSelection = (props) => {
     } 
 
     if (props.whichBand !== 'fourth' && props.whichBand !== 'fifth' && index > 9) 
-      return null;
+      empty = true;
 
+    if (empty) return (<div key={index}></div>);
+      
     return (
       <div key={index}>
         <Colour 

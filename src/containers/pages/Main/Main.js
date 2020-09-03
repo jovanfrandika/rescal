@@ -16,7 +16,7 @@ const Main = () => {
   const bandsProperty = Object.keys(bands);
 
   let selections = bandsProperty.map((band, index) => <BandSelection key={index} whichBand={band} />);
-
+  console.log(bands);
   return (
       <Layout>
         <div className={styles.mainContainer}>
