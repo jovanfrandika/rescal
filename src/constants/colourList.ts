@@ -6,19 +6,40 @@ export type FixedArray<T, N extends number> = GrowToSize<T, [], N>;
 export interface ColourInterface {
   label: string;
   hexCode: string;
+  theme: string;
+}
+
+export interface BandCodeInterface {
+  multiplier: number;
+  tolerance: string;
 }
 
 export const colours: FixedArray<ColourInterface, 12> = [
-  { label: 'black', hexCode: '#000' },
-  { label: 'brown', hexCode: '#78350F' },
-  { label: 'red', hexCode: '#EF4444' },
-  { label: 'orange', hexCode: '#F59E0B' },
-  { label: 'yellow', hexCode: '#FCD34D' },
-  { label: 'green', hexCode: '#34D399' },
-  { label: 'blue', hexCode: '#3B82F6' },
-  { label: 'violet', hexCode: '#A78BFA' },
-  { label: 'gray', hexCode: '#9CA3AF' },
-  { label: 'white', hexCode: '#FFF' },
-  { label: 'gold', hexCode: '#FFD700' },
-  { label: 'silver', hexCode: '#F3F4F6' },
+  { label: 'black', hexCode: '#000', theme: 'black' },
+  { label: 'brown', hexCode: '#78350F', theme: 'yellow-900' },
+  { label: 'red', hexCode: '#EF4444', theme: 'red-500' },
+  { label: 'orange', hexCode: '#F59E0B', theme: 'yellow-500' },
+  { label: 'yellow', hexCode: '#FCD34D', theme: 'yellow-300' },
+  { label: 'green', hexCode: '#34D399', theme: 'green-400' },
+  { label: 'blue', hexCode: '#3B82F6', theme: 'green-500' },
+  { label: 'violet', hexCode: '#A78BFA', theme: 'purple-400' },
+  { label: 'gray', hexCode: '#9CA3AF', theme: 'gray-400' },
+  { label: 'white', hexCode: '#FFF', theme: 'white' },
+  { label: 'gold', hexCode: '#FBBF24', theme: 'yellow-400' },
+  { label: 'silver', hexCode: '#F3F4F6', theme: 'gray-100' },
 ];
+
+export const bandCode: FixedArray<BandCodeInterface, 12> = [
+  { multiplier: 1, tolerance: '' },
+  { multiplier: 10, tolerance: '± 1%' },
+  { multiplier: 100, tolerance: '± 2%' },
+  { multiplier: 1, tolerance: '' },
+  { multiplier: 10, tolerance: '' },
+  { multiplier: 100, tolerance: '± 0.5%' },
+  { multiplier: 1, tolerance: '± 0.25%' },
+  { multiplier: 10, tolerance: '± 0.10%' },
+  { multiplier: 100, tolerance: '± 0.05%' },
+  { multiplier: 1, tolerance: '' },
+  { multiplier: 0.1, tolerance: '± 5%' },
+  { multiplier: 0.01, tolerance: '± 10%' },
+]
