@@ -35,12 +35,11 @@ The usage is very simple, just pick the colour combination that you want and the
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/uriella/rescal.git
    ```
-3. Install packages
+2. Install packages
    ```sh
    yarn
    ```
