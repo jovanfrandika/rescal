@@ -15,18 +15,18 @@ export interface BandCodeInterface {
 }
 
 export const colours: FixedArray<ColourInterface, 12> = [
-  { label: 'black', hexCode: '#000', theme: 'black' },
-  { label: 'brown', hexCode: '#78350F', theme: 'yellow-900' },
-  { label: 'red', hexCode: '#EF4444', theme: 'red-500' },
-  { label: 'orange', hexCode: '#F59E0B', theme: 'yellow-500' },
-  { label: 'yellow', hexCode: '#FCD34D', theme: 'yellow-300' },
-  { label: 'green', hexCode: '#34D399', theme: 'green-400' },
-  { label: 'blue', hexCode: '#3B82F6', theme: 'green-500' },
-  { label: 'violet', hexCode: '#A78BFA', theme: 'purple-400' },
-  { label: 'gray', hexCode: '#9CA3AF', theme: 'gray-400' },
-  { label: 'white', hexCode: '#FFF', theme: 'white' },
-  { label: 'gold', hexCode: '#FBBF24', theme: 'yellow-400' },
-  { label: 'silver', hexCode: '#F3F4F6', theme: 'gray-100' },
+  { label: 'black', hexCode: '#000', theme: 'text-black' },
+  { label: 'brown', hexCode: '#78350F', theme: 'text-yellow-900' },
+  { label: 'red', hexCode: '#EF4444', theme: 'text-red-500' },
+  { label: 'orange', hexCode: '#F59E0B', theme: 'text-yellow-500' },
+  { label: 'yellow', hexCode: '#FCD34D', theme: 'text-yellow-300' },
+  { label: 'green', hexCode: '#34D399', theme: 'text-green-400' },
+  { label: 'blue', hexCode: '#3B82F6', theme: 'text-green-500' },
+  { label: 'violet', hexCode: '#A78BFA', theme: 'text-purple-400' },
+  { label: 'gray', hexCode: '#9CA3AF', theme: 'text-gray-400' },
+  { label: 'white', hexCode: '#FFF', theme: 'text-white' },
+  { label: 'gold', hexCode: '#FBBF24', theme: 'text-yellow-400' },
+  { label: 'silver', hexCode: '#F3F4F6', theme: 'text-gray-100' },
 ];
 
 export const bandCode: FixedArray<BandCodeInterface, 12> = [
