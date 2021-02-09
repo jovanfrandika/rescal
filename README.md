@@ -28,6 +28,8 @@
 This small project was built with the initial intention to help user know resistor's band meaning.
 The usage is very simple, just pick the colour combination that you want and the resistor value will be shown.
 
+[Demo](https://rescal.frandika.com/)
+
 ### Built With
 
 * [TypeScript](https://www.typescriptlang.org/)
